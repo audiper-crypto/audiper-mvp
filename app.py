@@ -30,6 +30,59 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+
+# ============================================
+# AUTENTICAÇÃO
+# ============================================
+def check_password():
+    """
+    Verifica a senha do usuário antes de permitir acesso ao sistema.
+    Utiliza st.session_state para lembrar se o usuário já está autenticado.
+    """
+    # Verifica se o usuário já está autenticado
+    if "autenticado" not in st.session_state:
+        st.session_state.autenticado = False
+    
+    # Se já autenticado, retorna True
+    if st.session_state.autenticado:
+        return True
+    
+    # Exibe tela de login
+    st.markdown("## 🔒 Acesso Restrito")
+    st.markdown("### Audiper - Sistema de Auditoria Digital")
+    st.divider()
+    
+    # Campo de senha
+    senha_digitada = st.text_input(
+        "Digite a senha de acesso:",
+        type="password",
+        key="senha_input",
+        help="Entre em contato com o administrador se não possui a senha"
+    )
+    
+    # Botão de login
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        btn_login = st.button("🔓 Acessar Sistema", use_container_width=True, type="primary")
+    
+    # Valida a senha
+    if btn_login:
+        if senha_digitada == "audiper2025":
+            st.session_state.autenticado = True
+            st.success("✅ Acesso autorizado! Redirecionando...")
+            st.rerun()
+        else:
+            st.error("❌ Senha incorreta! Tente novamente.")
+            st.stop()
+    
+    # Bloqueia acesso se não autenticado
+    st.stop()
+
+
+# Executar verificação de senha
+check_password()
+
+
 # CSS Customizado
 st.markdown("""
 <style>
