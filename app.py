@@ -103,7 +103,6 @@ if "dados_carregados" not in st.session_state:
 # SIDEBAR
 # ============================================
 with st.sidebar:
-    st.image("https://img.icons8.com/fluency/96/audit.png", width=80)
     st.markdown("## 🔍 Audiper")
     st.markdown("*Sistema de Auditoria Digital*")
     st.divider()
