@@ -1,0 +1,149 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    🔍 AUDIPER - INSTRUÇÕES DE DEPLOY                      ║
+║                                                                            ║
+║              Sistema de Auditoria Digital para SPED ECD                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📋 RESUMO EXECUTIVO
+═══════════════════════════════════════════════════════════════════════════
+
+O Audiper é um sistema de auditoria contábil automatizada que:
+✅ Processa arquivos SPED ECD
+✅ Identifica saldos invertidos
+✅ Gera relatórios em Excel
+✅ Funciona 100% na nuvem (Streamlit Cloud)
+✅ Totalmente GRÁTIS
+
+═══════════════════════════════════════════════════════════════════════════
+
+🚀 DEPLOY EM 5 MINUTOS
+═══════════════════════════════════════════════════════════════════════════
+
+1. Acesse: https://github.com/new
+   - Nome: audiper-mvp
+   - Deixe em branco (não inicializar)
+   - Clique: Create repository
+
+2. Na página do repositório, clique em "uploading an existing file"
+   - Faça upload de TODOS os arquivos desta pasta
+   - Commit com mensagem: "Audiper MVP"
+
+3. Acesse: https://share.streamlit.io
+   - Clique: New app
+   - Repository: seu-usuario/audiper-mvp
+   - Branch: main
+   - Main file: app.py
+   - Clique: Deploy
+
+4. PRONTO! Em 2-3 minutos seu app estará em:
+   https://audiper-mvp.streamlit.app
+
+═══════════════════════════════════════════════════════════════════════════
+
+💻 TESTAR LOCALMENTE (OPCIONAL)
+═══════════════════════════════════════════════════════════════════════════
+
+# 1. Criar ambiente virtual
+python3 -m venv venv
+source venv/bin/activate  # ou: venv\Scripts\activate (Windows)
+
+# 2. Instalar dependências
+pip install -r requirements.txt
+
+# 3. Executar
+streamlit run app.py
+
+# Abrirá em: http://localhost:8501
+
+═══════════════════════════════════════════════════════════════════════════
+
+📁 ARQUIVOS IMPORTANTES
+═══════════════════════════════════════════════════════════════════════════
+
+app.py                 → Aplicação principal (EXECUTE ESTE)
+requirements.txt       → Dependências Python
+README.md             → Documentação completa
+DEPLOY_GUIDE.md       → Guia detalhado de deploy
+
+core/                 → Lógica de negócio
+  ├── leitor_sped.py        → Parser do SPED
+  ├── testes_auditoria.py   → Testes automatizados
+  └── exportador.py         → Geração de Excel
+
+dados_demo/           → Dados para demonstração
+  └── demo_generator.py     → Gera dados fictícios
+
+.streamlit/           → Configurações visuais
+  └── config.toml           → Tema e cores
+
+═══════════════════════════════════════════════════════════════════════════
+
+✨ FUNCIONALIDADES
+═══════════════════════════════════════════════════════════════════════════
+
+✅ Upload de arquivo SPED ECD
+✅ Dados de demonstração (para testar sem arquivo real)
+✅ Detecção de saldos invertidos
+✅ Visualização interativa de achados
+✅ Download de relatório em Excel
+✅ Filtros por severidade
+✅ Visualização de dados brutos em JSON
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔧 REQUISITOS DO SISTEMA
+═══════════════════════════════════════════════════════════════════════════
+
+Python 3.8+
+Streamlit 1.28+
+Polars 0.20+
+xlsxwriter 3.1+
+
+(Tudo é instalado automaticamente pelo pip)
+
+═══════════════════════════════════════════════════════════════════════════
+
+❓ DÚVIDAS FREQUENTES
+═══════════════════════════════════════════════════════════════════════════
+
+P: Preciso pagar para usar o Streamlit Cloud?
+R: NÃO! É totalmente grátis.
+
+P: Posso usar em produção?
+R: Sim! O Streamlit Cloud é seguro e estável para uso interno.
+
+P: Como atualizar o app após fazer deploy?
+R: Basta fazer commit e push no GitHub. O Streamlit faz redeploy automaticamente.
+
+P: Posso adicionar mais testes de auditoria?
+R: Sim! Edite core/testes_auditoria.py e adicione novos testes.
+
+P: Qual é o limite de upload de arquivo?
+R: 200MB (pode ser aumentado em .streamlit/config.toml)
+
+═══════════════════════════════════════════════════════════════════════════
+
+📞 SUPORTE
+═══════════════════════════════════════════════════════════════════════════
+
+Documentação: README.md
+Guia Detalhado: DEPLOY_GUIDE.md
+Streamlit Docs: https://docs.streamlit.io
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ PRÓXIMOS PASSOS
+═══════════════════════════════════════════════════════════════════════════
+
+1. Fazer upload para GitHub
+2. Conectar ao Streamlit Cloud
+3. Testar com dados demo
+4. Testar com arquivo SPED real
+5. Compartilhar URL com a equipe
+
+═══════════════════════════════════════════════════════════════════════════
+
+Desenvolvido com ❤️ para Audiper
+Versão: 1.0 | Dezembro 2025
+
+═══════════════════════════════════════════════════════════════════════════

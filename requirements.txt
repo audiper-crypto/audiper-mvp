@@ -1,0 +1,15 @@
+# Audiper MVP - Dependências
+# Execute: pip install -r requirements.txt
+
+# Interface
+streamlit>=1.28.0
+
+# Processamento de dados (Polars é MUITO mais rápido que Pandas)
+polars>=0.20.0
+
+# Export Excel
+xlsxwriter>=3.1.0
+
+# Utilitários (já inclusos no Python, mas listados para clareza)
+# dataclasses - built-in Python 3.7+
+# typing - built-in
